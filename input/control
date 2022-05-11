@@ -1,0 +1,27 @@
+control
+{
+name    190821_f70MPa_01
+dataSet 190821_f70MPa_01
+dt      0.5
+tEnd    250
+nFrames 250
+NCells  60
+}
+
+customData
+{
+pStart  1e7
+pEnd    7e7
+tFull   180
+TAmb    290
+TCool   245
+tTbot   30
+}
+
+factors
+{
+TCXLin  1
+TCXWra  1
+alphaLin  1
+alphaWra  1
+}

@@ -1,0 +1,8 @@
+geometry
+{
+V       0.036
+Din     0.2588
+Ain     0.61
+Dext    0.3208
+Rinl    0.0015
+}
