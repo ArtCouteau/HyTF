@@ -87,7 +87,7 @@ out =
 
 #### Quick fix in case of **[SETUP error 101]**
 
-While Refprop should find the `FLUIDS` directory but you might (on OSX and UNIX) end up with an error code like
+Refprop should find the `FLUIDS` directory but you might (on OSX and UNIX) end up with an error code like
 
 ```matlab
 [SETUP error 101] Error in opening file for component 1: filename = Hydrogen.FLD
