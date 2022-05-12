@@ -1,7 +1,7 @@
 classdef NISTReader < handle
     %NISTREADER Reads thermodynamical and transport properties from the
     %NIST database
-    
+
     properties
         % REFPROP database
         RP
@@ -16,21 +16,24 @@ classdef NISTReader < handle
         % Fluid composition
         z
     end
-    
+
     methods
         function obj = NISTReader()
-            %NISTREADER Construct an instance of this class
-            obj.RPPath = '/home/acouteau/Documents/1_PhD/1_Codes/0_Libraries/3_REFPROP/REFPROP-cmake/refprop';
+            %NISTREADER Construct an instance of this class'
+            obj.RPPath = '/path/to/refprop';
+            if (strcmp(obj.RPPath),'/path/to/refprop')
+                error(['Please specify the path to your REFPROP folder in +simulation/+HydrogenThermodynamics/@NISTReader/NISTReader.m'])
+            end
             obj.RP = py.ctREFPROP.ctREFPROP.REFPROPFunctionLibrary(obj.RPPath);
             obj.iUnits = obj.RP.GETENUMdll(int8(0), 'MASS BASE SI').iEnum;  % Mass base SI units
             obj.iMass = int8(1);    % Output is in mass fraction
             obj.iFlag = int8(0);    % 0: don't call SATSPLN; 1: call SATSPLN
             obj.z = {1.0};          % Composition of the fluid
         end
-        
+
         function out = getProperty(obj,fluidName,propName,T,p)
         %GETPROPERTY Return property from NIST database
-            
+
             switch fluidName
                 case 'Hydrogen'
                     FLDpath = [obj.RPPath '/FLUIDS/HYDROGEN.FLD'];
