@@ -19,10 +19,10 @@ classdef NISTReader < handle
 
     methods
         function obj = NISTReader()
-            %NISTREADER Construct an instance of this class'
+            %NISTREADER Construct an instance of this class
             obj.RPPath = '/path/to/refprop';
-            if (strcmp(obj.RPPath),'/path/to/refprop')
-                error(['Please specify the path to your REFPROP folder in +simulation/+HydrogenThermodynamics/@NISTReader/NISTReader.m'])
+            if (strcmp(obj.RPPath,'/path/to/refprop'))
+                error('Please specify the path to your REFPROP folder in +simulation/+HydrogenThermodynamics/@NISTReader/NISTReader.m')
             end
             obj.RP = py.ctREFPROP.ctREFPROP.REFPROPFunctionLibrary(obj.RPPath);
             obj.iUnits = obj.RP.GETENUMdll(int8(0), 'MASS BASE SI').iEnum;  % Mass base SI units
