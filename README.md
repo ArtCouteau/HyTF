@@ -108,3 +108,21 @@ In this case, you can specify the absolute path to the `HYDROGEN.FLD` file to th
 #### Refprop functions documentation
 
 You can find the Refprop functions documentation [here](https://refprop-docs.readthedocs.io/en/latest/DLL/high_level.html#)
+
+## Run
+
+The configuration files are in the `input` folder: `control` contains the general parameters and `geometry` information on the tank. As the code needs the data of the incoming hydrogen flow, you can select experimental data (the dataset `190821_f70MPa_01` is made available in `input/sensorData`) or create custom data by filling the desired value in the `custom` dictionary.
+
+```text
+dataSet 190821_f70MPa_01
+OR
+dataSet custom
+```
+
+Once you have set your configuration, you can run the code by simply typing
+
+```matlab
+>> run main
+```
+
+It will create a folder `output/<name>` containing the simulation output, the input files used to run the simulation and some post processed graphs
