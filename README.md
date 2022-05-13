@@ -118,6 +118,16 @@ You can find the Refprop functions documentation [here](https://refprop-docs.rea
 
 ## Run
 
+### Update NISTReader with your path to Refprop
+
+Naviguate to `+simulation/+HydrogenThermodynamics/@NistReader` and update the path to Refprop in the class constructor (line 23)
+
+```matlab
+obj.RPPath = '/path/to/refprop';
+```
+
+### Run a simulation
+
 The configuration files are in the `input` folder: `control` contains the general parameters and `geometry` information on the tank. As the code needs the data of the incoming hydrogen flow, you can select experimental data (the dataset `190821_f70MPa_01` is made available in `input/sensorData`) or create custom data by filling the desired value in the `custom` dictionary.
 
 ```text
