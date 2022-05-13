@@ -1,6 +1,13 @@
 # HyTF
 
-A solver to study heat transfer in high pressure hydrogen tank fillings, written in Matlab
+A solver to study heat transfer in high pressure hydrogen tank fillings
+
+Requires:
+
+```text
+Matlab with the Optimization toolbox
+NIST Refprop database (version >= 9.1)
+```
 
 ## Installation
 
